@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import type { DocsThemeConfig } from 'nextra-theme-docs'
 import { useConfig } from 'nextra-theme-docs'
 
-const logo = () => <div>NK</div>
+const logo = () => <div className='font-bold font-mono tracking-tight inline from-[#b21c1c] to-[#ff9900] text-[2.5rem] lg:text-3xl bg-clip-text text-transparent bg-gradient-to-b'>NK</div>
 
 const config: DocsThemeConfig = {
   project: {
@@ -18,6 +18,11 @@ const config: DocsThemeConfig = {
     }
   },
   logo,
+  banner: {
+    key: 'update banner',
+    text: 'We will update the components and personal introduction later.'
+  },
+  faviconGlyph: '❤️',
   head: function useHead() {
     const { title } = useConfig()
 
@@ -61,6 +66,9 @@ const config: DocsThemeConfig = {
     },
     defaultMenuCollapseLevel: 1,
     toggleButton: true
+  },
+  search:{
+    placeholder: '搜索文档'
   },
   footer: {
     text: (
