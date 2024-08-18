@@ -1,0 +1,28 @@
+{
+  "index": {
+    "type": "page",
+    "title": "NK",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "文档"
+  },
+  "about": {
+    "type": "page",
+    "title": "关于",
+    "theme": {
+      "typesetting": "article"
+    }
+  },
+  "404": {
+    "type": "page",
+    "theme": {
+      "timestamp": false,
+      "typesetting": "article"
+    }
+  }
+}
