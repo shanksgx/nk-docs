@@ -1,14 +1,103 @@
-# Nextra
+# nk-plus
 
-**Nextra** is a framework on top of Next.js, that lets you build content focused
-websites. It has all the great features from Next.js, plus extra power to create
-Markdown-based content with ease.
+**Nk-plus** It is a valuable collection of component libraries, and I will encapsulate the components I have developed into it for continuous updates.
 
-## Nextra FAQ
+### Installation package
+
+```sh npm2yarn
+npm i nk-plus-antd
+```
+
+import { Tabs } from 'nextra/components'
+// import CodeBrowseDemo from '@components/CodeBrowseDemo'
+import TextEllipsisDemo from '@components/TextEllipsisDemo'
+
+## TextEllipsis
+
+**TextEllipsis** is an automatic text length recognition system that displays text beyond the parent element, omits the original content of the text in the tooltip, and does not exceed the displayed text content.
+
+<Tabs items={['component', 'code']}>
+  <Tabs.Tab>
+    <TextEllipsisDemo isExceed />
+    <br/>
+    <TextEllipsisDemo isExceed={false} />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx {2, 12-16} filename="TextEllipsisDemo.tsx"
+    import React from "react"
+    import { TextEllipsis, cn } from 'nk-plus-antd'
+
+    const TextEllipsisDemo: React.FC = ({ isExceed }: { isExceed: boolean }) => {
+      return (
+        <div 
+          className={cn(
+            "h-[24px] border border-gray-100 truncate",
+            isExceed ? "w-[250px]" : "w-[520px]"
+          )}
+        >
+          <TextEllipsis 
+            text={'This is a component with text exceeding the displayed tooltip.'}
+            hover
+            placement={'top'}
+          />
+        </div>
+      )
+    }
+
+    export default TextEllipsisDemo
+    ```
+  </Tabs.Tab>
+</Tabs>     
+
+## CodeBrowse
+
+**CodeBrowse**  is a beautiful code monitor that can copy code content.
+
+<Tabs items={['code']}>
+  <Tabs.Tab>
+    ```jsx {2, 23-25} filename="CodeBrowseDemo.tsx"
+      import React from "react"
+      import { CodeBrowse } from 'nk-plus-antd'
+      import { message } from 'antd'
+
+      const code = `
+        import React from 'react'
+        import { AntdRegistry } from '@ant-design/nextjs-registry'
+
+        const RootLayout = ({ children }: React.PropsWithChildren) => (
+          <html lang="en">
+            <body>
+              <AntdRegistry>{children}</AntdRegistry>
+            </body>
+          </html>
+        )
+
+        export default RootLayout
+      `
+
+      const CodeBrowseDemo: React.FC = () => {
+        return (
+          <div>
+            <CodeBrowse code={code} title={'bower.tsx'} callCopy={(bool) => {
+              if(bool) message.success('复制成功😄')
+            }} />
+          </div>
+        )
+      }
+
+      export default CodeBrowseDemo
+    ```
+  </Tabs.Tab>
+  {/* <Tabs.Tab>
+    <CodeBrowseDemo />
+  </Tabs.Tab> */}
+</Tabs>
+
+## Nk-plus FAQ
 
 The Nextra FAQ is a collection of useful questions and answers about the
 project. If you have a question that isn't answered here, please
-[open a discussion](https://github.com/shuding/nextra/discussions).
+[open a discussion](https://github.com/shanksgx/nk-docs/issues).
 
 export function FAQBox({ title, children }) {
   return (
@@ -24,25 +113,12 @@ export function FAQBox({ title, children }) {
   )
 }
 
-<FAQBox title="Can I use Nextra with Next.js app router?">
-  No, Nextra only works with the `/pages` directory at the moment. Support for
-  the app router has not been implemented yet. But you can use `/app` and
-  `/pages` at the same time - just put your docs inside `/pages` and your other
-  routes in `/app`
-</FAQBox>
+<FAQBox title="What packages do we need to rely on for development after introducing component?">
+  This question is very simple. First, install tailwindcss, then install antd5. x version, and introduce the nk plus antd package to use it!
 
-<FAQBox title="Can I use X with Nextra?">
-  The answer is “yes” for most things. Since Nextra is just a Next.js plugin, almost all the things
-  that can be done with React can be done with Nextra. Here are some examples and guides:
-
-- [Use Tailwind CSS](/docs/guide/tailwind-css)
-- [Use custom CSS and Sass](/docs/guide/custom-css)
-- [Use custom fonts](https://nextjs.org/docs/basic-features/font-optimization)
+- [Use Tailwind CSS](https://www.tailwindcss.cn/)
+- [Use antd](https://ant-design.antgroup.com/index-cn)
+- [Use ahooks](https://ahooks.js.org/zh-CN/)
 
 </FAQBox>
 
-<FAQBox title="How can I add a live coding component in Nextra?">
-  There are libraries like [Sandpack](https://sandpack.codesandbox.io) and
-  [react-live](https://github.com/FormidableLabs/react-live) that can help you
-  add live coding components to your MDX.
-</FAQBox>
