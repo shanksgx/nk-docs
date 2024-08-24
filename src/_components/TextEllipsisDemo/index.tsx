@@ -5,7 +5,7 @@ const TextEllipsisDemo: React.FC<{ isExceed: boolean }> = ({ isExceed }) => {
   return (
     <div 
       className={cn(
-        "h-[24px] border border-gray-100 truncate",
+        "h-[24px] truncate",
         isExceed ? "w-[250px]" : "w-[600px]"
       )}
     >

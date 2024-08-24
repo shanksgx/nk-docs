@@ -32,17 +32,19 @@ const config: DocsThemeConfig = {
         <meta name="theme-color" content="#fff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
+        <title>nk-plus docs</title>
+        <meta name="Keywords" content="goduer, nk-plus docs,goduer blog, nk-plus, nk-plus-antd"/>
         <meta
           name="description"
-          content="Make beautiful websites with MDX."
+          content="Make beautiful components by goduer."
         />
         <meta
           name="og:description"
-          content="Make beautiful websites MDX."
+          content="Make beautiful components by goduer."
         />
         <meta
           name="og:title"
-          content={title ? title + ' – NK' : 'NK'}
+          content={title ? title + ' – goduer' : 'NK'}
         />
         <meta name="apple-mobile-web-app-title" content="NK" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -74,7 +76,7 @@ const config: DocsThemeConfig = {
     text: (
       <div className="flex w-full flex-col items-center sm:items-start">
         <div>
-          <span>Powered by Gox</span>
+          <span>Powered by Goduer</span>
         </div>
         <p className="mt-6 text-xs">
           © {new Date().getFullYear()} The NK Project.
