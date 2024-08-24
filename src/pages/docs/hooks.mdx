@@ -1,0 +1,84 @@
+# hooks
+
+Developing Practical Hooks Based on React
+
+## useClipboard
+**useClipboard** is a Hooks for handling copied text.
+
+### Installation package
+
+```sh npm2yarn
+npm i nk-plus-antd
+```
+
+import { Tabs } from 'nextra/components'
+import ClipboardBtn from '@components/ClipboardBtn'
+
+<Tabs items={['component', 'code']}>
+  <Tabs.Tab>
+    <ClipboardBtn />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx {2, 15, 40-49} filename="ClipboardBtn.tsx"
+    import React, { useState, useEffect } from 'react'
+    import { useClipboard, cn } from 'nk-plus-antd'
+    import { Tooltip } from 'antd'
+    import { CopyIcon, SuccessIcon } from '@components/Icon'
+
+    type propsType = {
+      timeout: number
+      callCopy?: (status: boolean) => void
+    }
+
+    const copyStr = 'Fast, disk space efficient package manager.'
+
+    const ClipboardBtn: React.FC<propsType> = ({ callCopy, timeout = 2000 }) => {
+      const [status, setStatus] = useState<boolean>(false)
+      const { copy, reset, error, copied } = useClipboard({ timeout: timeout })
+
+      useEffect(() => {
+        if (status) {
+          setTimeout(() => {
+            setStatus(false)
+          }, timeout)
+        }
+      }, [status])
+
+      return (
+        <div
+        className={cn(
+          'flex cursor-pointer justify-start items-center',
+          status ? 'text-slate-200' : 'text-stone-600'
+        )}
+        >
+          <span className='mx-[8px]'>{copyStr}</span>
+          {status ? (
+                <SuccessIcon />
+              ) : (
+                <Tooltip placement={'top'} title={'复制'}>
+                  <div
+                    id="copyBtn"
+                    onClick={() => {
+                      copy(copyStr)
+                      setStatus(true)
+                      if (copied && callCopy) {
+                        callCopy(true)
+                      }
+                      if (error) {
+                        setStatus(false)
+                      }
+                      reset()
+                    }}
+                  >
+                    <CopyIcon />
+                  </div>
+                </Tooltip>
+              )}
+        </div>
+      )
+    }
+
+    export default ClipboardBtn
+    ```
+  </Tabs.Tab>
+</Tabs>

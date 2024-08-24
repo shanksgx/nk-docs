@@ -6,7 +6,8 @@ const withNextra = nextra({
   latex: true,
   flexsearch: {
     codeblock: false
-  }
+  },
+  defaultShowCopyCode: true
 })
 
 export default withNextra({

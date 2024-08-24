@@ -7,7 +7,7 @@ const logo = () => <div className='font-bold font-mono tracking-tight inline fro
 
 const config: DocsThemeConfig = {
   project: {
-    link: 'https://github.com/shanksgx/nk-docs'
+    link: 'https://github.com/shanksgx'
   },
   useNextSeoProps() {
     const { asPath } = useRouter()
@@ -20,7 +20,7 @@ const config: DocsThemeConfig = {
   logo,
   banner: {
     key: 'update banner',
-    text: 'We will update the components and personal introduction later.'
+    text: 'I will continue to update the components and personal blog.'
   },
   faviconGlyph: '❤️',
   head: function useHead() {
