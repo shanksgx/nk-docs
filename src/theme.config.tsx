@@ -32,8 +32,8 @@ const config: DocsThemeConfig = {
         <meta name="theme-color" content="#fff" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Language" content="en" />
-        <title>nk-plus blog</title>
-        <meta name="Keywords" content="goduer, blog, nk-plus, nk-plus-antd"/>
+        <title>nk-plus docs</title>
+        <meta name="Keywords" content="goduer, nk-plus docs,goduer blog, nk-plus, nk-plus-antd"/>
         <meta
           name="description"
           content="Make beautiful components by goduer."
