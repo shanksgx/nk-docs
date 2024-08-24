@@ -18,7 +18,7 @@ const code = `
 
 const CodeBrowseDemo: React.FC = () => {
   return (
-    <div className="w-[750px]">
+    <div className="w-full">
       <CodeBrowse
         code={code} 
         title={'bower.tsx'}

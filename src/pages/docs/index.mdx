@@ -9,7 +9,7 @@ npm i nk-plus-antd
 ```
 
 import { Tabs } from 'nextra/components'
-// import CodeBrowseDemo from '@components/CodeBrowseDemo'
+import CodeBrowseDemo from '@components/CodeBrowseDemo'
 import TextEllipsisDemo from '@components/TextEllipsisDemo'
 
 ## TextEllipsis
@@ -51,11 +51,14 @@ import TextEllipsisDemo from '@components/TextEllipsisDemo'
 
 ## CodeBrowse
 
-**CodeBrowse**  is a beautiful code monitor that can copy code content.
+**CodeBrowse** is a beautiful code monitor that can copy code content.
 
-<Tabs items={['code']}>
+<Tabs items={['component', 'code']}>
   <Tabs.Tab>
-    ```jsx {2, 23-25} filename="CodeBrowseDemo.tsx"
+    <CodeBrowseDemo />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx {2, 23} filename="CodeBrowseDemo.tsx"
       import React from "react"
       import { CodeBrowse } from 'nk-plus-antd'
       import { message } from 'antd'
@@ -78,9 +81,7 @@ import TextEllipsisDemo from '@components/TextEllipsisDemo'
       const CodeBrowseDemo: React.FC = () => {
         return (
           <div>
-            <CodeBrowse code={code} title={'bower.tsx'} callCopy={(bool) => {
-              if(bool) message.success('复制成功😄')
-            }} />
+            <CodeBrowse code={code} title={'bower.tsx'} />
           </div>
         )
       }
@@ -88,9 +89,6 @@ import TextEllipsisDemo from '@components/TextEllipsisDemo'
       export default CodeBrowseDemo
     ```
   </Tabs.Tab>
-  {/* <Tabs.Tab>
-    <CodeBrowseDemo />
-  </Tabs.Tab> */}
 </Tabs>
 
 ## Nk-plus FAQ
@@ -112,10 +110,27 @@ export function FAQBox({ title, children }) {
     </details>
   )
 }
+import { Callout } from 'nextra/components'
 
 <FAQBox title="What packages do we need to rely on for development after introducing component?">
   This question is very simple. First, install tailwindcss, then install antd5. x version, and introduce the nk plus antd package to use it!
-
+  
+  <Callout type="warning" emoji="⚠️">
+    tailwind.config Must be set to prevent style loss.
+  </Callout>
+  
+  ```js {4}
+    /** @type {import('tailwindcss').Config} */
+    module.exports = {
+      content: [
+        './node_modules/nk-plus-antd/**/*.{js,mjs}'
+      ],
+      theme: {
+        extend: {}
+      },
+      plugins: []
+    }
+  ```
 - [Use Tailwind CSS](https://www.tailwindcss.cn/)
 - [Use antd](https://ant-design.antgroup.com/index-cn)
 - [Use ahooks](https://ahooks.js.org/zh-CN/)

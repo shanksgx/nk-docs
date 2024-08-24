@@ -4,7 +4,8 @@ module.exports = {
     './src/pages/**/*.{ts,tsx,mdx}',
     './src/_components/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx,mdx}',
-    './src/theme.config.tsx'
+    './src/theme.config.tsx',
+    './node_modules/nk-plus-antd/**/*.js'
   ],
   theme: {
     extend: {}
