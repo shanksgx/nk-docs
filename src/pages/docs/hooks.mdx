@@ -13,6 +13,7 @@ npm i nk-plus-antd
 
 import { Tabs } from 'nextra/components'
 import ClipboardBtn from '@components/ClipboardBtn'
+import SyncScrollingDemo from '@components/SyncScrollingDemo'
 
 <Tabs items={['component', 'code']}>
   <Tabs.Tab>
@@ -81,4 +82,48 @@ import ClipboardBtn from '@components/ClipboardBtn'
     export default ClipboardBtn
     ```
   </Tabs.Tab>
+</Tabs>
+
+## useSyncScrolling
+
+**useSyncScrolling** is a Hooks for Synchronize the rolling position of the box.
+
+<Tabs items={['component', 'code']}>
+  <Tabs.Tab>
+    <SyncScrollingDemo />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx {2, 5-8} filename="SyncScrollingDemo.tsx"
+    import { useRef } from 'react'
+    import { useSyncScrolling } from 'nk-plus-antd'
+
+    const SyncScrollingDemo = () => {
+      const docLeft = useRef<HTMLDivElement>(null)
+      const docRight = useRef<HTMLDivElement>(null)
+
+      useSyncScrolling(docLeft, docRight)
+
+      return (
+        <div className="flex">
+          <div
+            data-testid="left"
+            ref={docLeft}
+            className="bg-slate-800 text-white overflow-auto w-[500px] h-[500px]"
+          >
+            <div className='w-[800px] h-[800px] p-[16px]'>Left</div>
+          </div>
+          <div
+            data-testid="right"
+            className="bg-yellow-600 text-white  overflow-auto w-[500px] h-[500px]"
+            ref={docRight}
+          >
+            <div className='w-[800px] h-[800px] p-[16px]'>right</div>
+          </div>
+        </div>
+      )
+    }
+
+    export default SyncScrollingDemo
+    ```
+  </Tabs.Tab>  
 </Tabs>

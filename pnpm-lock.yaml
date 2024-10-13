@@ -21,8 +21,8 @@ importers:
         specifier: ^2.13.4
         version: 2.13.4(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(nextra@2.13.4(next@13.5.6(@babel/core@7.25.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       nk-plus-antd:
-        specifier: ^1.0.7
-        version: 1.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.9(@babel/preset-env@7.25.4(@babel/core@7.25.2)))
+        specifier: ^1.0.8
+        version: 1.0.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.9(@babel/preset-env@7.25.4(@babel/core@7.25.2)))
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2898,8 +2898,8 @@ packages:
       react: '>=16.13.1'
       react-dom: '>=16.13.1'
 
-  nk-plus-antd@1.0.7:
-    resolution: {integrity: sha512-dj6DzZN1oemevbkLr1dy2XHD3qfce+P/jOkghSdxzeZV0szRXvNJdcfzweR+OxPXvzUBzWLzvSmEeVgAm1pfVQ==}
+  nk-plus-antd@1.0.8:
+    resolution: {integrity: sha512-6YXuo0zAT19b05WRuRNYWKIxrtAL4SHkVgx+0at8wh7BjkO00G1s2RRQoPNIoI4rND3ksRuwHhF4Sh7nz5uVlw==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
@@ -7626,7 +7626,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  nk-plus-antd@1.0.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.9(@babel/preset-env@7.25.4(@babel/core@7.25.2))):
+  nk-plus-antd@1.0.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.9(@babel/preset-env@7.25.4(@babel/core@7.25.2))):
     dependencies:
       '@storybook/addon-docs': 8.2.9(storybook@8.2.9(@babel/preset-env@7.25.4(@babel/core@7.25.2)))
       ahooks: 3.8.1(react@18.3.1)
